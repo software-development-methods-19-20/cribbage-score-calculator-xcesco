@@ -9,9 +9,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 class HandTest {
     @Test
-    public void testCreation() {
-        Hand hand=new Hand("5H5D5SJC5C");
-
-        assertThat(hand.computeScore(), is(29));
+    public void testFifteenTwos() {
+        Hand hand=new Hand("5H5D5SAC6C");
+        assertThat(hand.computeScore(), is(2));
     }
 }
