@@ -1,7 +1,6 @@
 package it.units.games;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Hand {
@@ -10,7 +9,8 @@ public class Hand {
 
     static {
         rules = new ArrayList<>();
-        rules.add(new FifteenTwos());
+        rules.add(new FifteenTwosRule());
+        rules.add(new RunsRule());
     }
 
     private final List<Card> cards;
@@ -30,6 +30,6 @@ public class Hand {
     }
 
     public List<Card> getCards() {
-        return cards;
+        return new ArrayList<>(cards);
     }
 }

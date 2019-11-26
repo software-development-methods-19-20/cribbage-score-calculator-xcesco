@@ -4,7 +4,7 @@ package it.units.games;
  * Two points for each separate combination of two or more cards totalling exactly fifteen
  * (Jack, Queen and King count as 10, Ace count as 1)
  */
-public class FifteenTwos implements Rule {
+public class FifteenTwosRule implements Rule {
     @Override
     public int apply(Hand hand) {
         Combination<Card> combination = new Combination<>(hand.getCards());
