@@ -1,6 +1,7 @@
 package it.units.games;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
@@ -17,6 +18,15 @@ public class SuiteTest {
         Suite[] output = {CLUBS, DIAMONDS, HEARTS, SPADES};
 
         IntStream.range(0, input.length).forEach(index -> Assert.assertThat(Suite.parse(input[index]), is(output[index])));
+    }
+
+    @Test
+    public void testInvalidConversion() {
+        Character[] input = {'Z'};
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            Suite.parse(input[0]);
+        });
     }
 
 }

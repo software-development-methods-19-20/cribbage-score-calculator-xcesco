@@ -28,6 +28,6 @@ public enum Rank {
     }
 
     public static Rank parse(final char value) {
-        return Arrays.stream(Rank.values()).filter(item -> item.getValue() == value).findFirst().orElse(null);
+        return Arrays.stream(Rank.values()).filter(item -> item.getValue() == value).findFirst().orElseThrow(()-> new IllegalArgumentException(value+" is an invalid rank"));
     }
 }

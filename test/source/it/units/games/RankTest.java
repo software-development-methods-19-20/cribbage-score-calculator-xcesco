@@ -1,6 +1,7 @@
 package it.units.games;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
@@ -16,6 +17,15 @@ public class RankTest {
         Rank[] output = {ACE, RANK_2, RANK_3, RANK_4, RANK_5, RANK_6, RANK_7, RANK_8, RANK_9, RANK_10, JACK, QUEEN, KIN};
 
         IntStream.range(0, input.length).forEach(index -> Assert.assertThat(Rank.parse(input[index]), is(output[index])));
+    }
+
+    @Test
+    public void testInvalidConversion() {
+        Character[] input = {'Z'};
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            Rank.parse(input[0]);
+        });
     }
 
 }
