@@ -19,7 +19,9 @@ public enum Suite {
     }
 
     public static Suite parse(final char value) {
-        return Arrays.stream(Suite.values()).filter(item -> item.getValue() == value).findFirst().orElseThrow(() -> new IllegalArgumentException(value + " is an invalid suite"));
+        return Arrays.stream(Suite.values())
+                .filter(item -> item.getValue() == value)
+                .findFirst().orElseThrow(() -> new IllegalArgumentException(value + " is an invalid suite"));
     }
 
     @Override

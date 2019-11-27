@@ -27,12 +27,9 @@ public class FifteenRule implements Rule {
     }
 
     private int getScoreCombinationOf(int combinationSize, Combination<Card> combination) {
-        int score = (int) combination.perform(combinationSize)
+        return (int) combination.perform(combinationSize)
                 .map(item -> item.mapToInt(card -> card.getRank().getIntValue()).sum())
                 .filter(value -> value == 15)
                 .count() * 2;
-
-
-        return score;
     }
 }

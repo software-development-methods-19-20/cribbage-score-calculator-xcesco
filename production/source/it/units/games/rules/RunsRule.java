@@ -45,7 +45,6 @@ public class RunsRule implements Rule {
     private int combineWithPreviousCard(List<Card> sorted, int index) {
         int previousValue = (index - 1 < 0) ? -100 : sorted.get(index - 1).getRank().ordinal();
         int currentValue = sorted.get(index).getRank().ordinal();
-        return previousValue + 1 == currentValue
-                ? 1 : 0;
+        return previousValue + 1 == currentValue ? 1 : 0;
     }
 }
