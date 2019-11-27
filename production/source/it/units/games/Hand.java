@@ -11,6 +11,7 @@ public class Hand {
         rules = new ArrayList<>();
         rules.add(new FifteenTwosRule());
         rules.add(new RunsRule());
+        rules.add(new PairsRule());
     }
 
     private final List<Card> cards;

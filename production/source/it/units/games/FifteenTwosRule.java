@@ -9,22 +9,26 @@ public class FifteenTwosRule implements Rule {
     public int apply(Hand hand) {
         Combination<Card> combination = new Combination<>(hand.getCards());
 
-        int score = 0;
-        score += getScoreCombinationOf(2, combination);
-        score += getScoreCombinationOf(3, combination);
-        score += getScoreCombinationOf(4, combination);
-        score += getScoreCombinationOf(5, combination);
-        return score;
+        int result = 0;
+        result += getScoreCombinationOf(2, combination);
+        result += getScoreCombinationOf(3, combination);
+        result += getScoreCombinationOf(4, combination);
+        result += getScoreCombinationOf(5, combination);
+
+        System.out.println(this.getClass().getSimpleName() + " generates " + result);
+        return result;
     }
 
     private int getScoreCombinationOf(int combinationSize, Combination<Card> combination) {
         int score;
         score = (int) combination.calculate(combinationSize)
                 .map(item -> item
-                        .mapToInt(card -> card.getRank().getV())
+                        .mapToInt(card -> card.getRank().getIntValue())
                         .sum())
                 .filter(value -> value == 15)
                 .count() * 2;
+
+
         return score;
     }
 }

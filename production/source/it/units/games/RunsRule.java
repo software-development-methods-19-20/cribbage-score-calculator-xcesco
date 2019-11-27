@@ -21,7 +21,9 @@ public class RunsRule implements Rule {
                 count++;
             }
         }
+        int result = count > 2 ? count : 0;
 
-        return count > 2 ? count : 0;
+        System.out.println(this.getClass().getSimpleName() + " generates " + result);
+        return result;
     }
 }

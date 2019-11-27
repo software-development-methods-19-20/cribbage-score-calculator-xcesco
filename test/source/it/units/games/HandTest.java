@@ -26,5 +26,23 @@ class HandTest {
         assertThat(hand.computeScore(), is(4));
     }
 
+    @Test
+    public void testRunsPairs2() {
+        Hand hand=new Hand("4H9D3SACKC");
+        assertThat(hand.computeScore(), is(4));
+    }
+
+    @Test
+    public void testRunsPairs4() {
+        Hand hand=new Hand("4H4D3SACAC");
+        assertThat(hand.computeScore(), is(4));
+    }
+
+    @Test
+    public void testRunsPairs3() {
+        Hand hand=new Hand("4H4D9S2CAC");
+        assertThat(hand.computeScore(), is(2));
+    }
+
 
 }

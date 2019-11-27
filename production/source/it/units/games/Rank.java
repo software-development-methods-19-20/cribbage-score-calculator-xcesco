@@ -23,15 +23,15 @@ public enum Rank {
 
     private final char value;
 
-    public int getV() {
-        return v;
+    public int getIntValue() {
+        return intValue;
     }
 
-    private final int v;
+    private final int intValue;
 
-    Rank(char value, int v) {
+    Rank(char value, int intValue) {
         this.value = value;
-        this.v = v;
+        this.intValue = intValue;
     }
 
     public static Rank parse(final char value) {
