@@ -1,3 +1,5 @@
+**Ok, finished! :ok_hand:**
+
 # Cribbage score calculator assignment
 
 Write a Java program that computes the score of a [Cribbage](https://en.wikipedia.org/wiki/Rules_of_cribbage) hand consisting of four hand cards and a starter card.
