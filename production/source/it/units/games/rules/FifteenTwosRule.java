@@ -1,4 +1,9 @@
-package it.units.games;
+package it.units.games.rules;
+
+import it.units.games.Card;
+import it.units.games.Combination;
+import it.units.games.Hand;
+import it.units.games.Rule;
 
 /**
  * Two points for each separate combination of two or more cards totalling exactly fifteen

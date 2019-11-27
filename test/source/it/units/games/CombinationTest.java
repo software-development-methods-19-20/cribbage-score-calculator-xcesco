@@ -1,5 +1,6 @@
 package it.units.games;
 
+import it.units.games.Combination;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

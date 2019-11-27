@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Combination implementation from https://www.baeldung.com/java-combinations-algorithm
+ * Adapted combination implementation from https://www.baeldung.com/java-combinations-algorithm
  */
 public class Combination<T> {
     public Combination(List<T> dataSet) {

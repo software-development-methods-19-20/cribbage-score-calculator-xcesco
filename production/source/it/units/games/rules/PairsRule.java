@@ -1,4 +1,9 @@
-package it.units.games;
+package it.units.games.rules;
+
+import it.units.games.Card;
+import it.units.games.Hand;
+import it.units.games.Rank;
+import it.units.games.Rule;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,11 +1,15 @@
 package it.units.games;
 
+import it.units.games.rules.FifteenTwosRule;
+import it.units.games.rules.PairsRule;
+import it.units.games.rules.RunsRule;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
 
-    private final static List<Rule> rules;
+    final static List<Rule> rules;
 
     static {
         rules = new ArrayList<>();
@@ -32,5 +36,9 @@ public class Hand {
 
     public List<Card> getCards() {
         return new ArrayList<>(cards);
+    }
+
+    public Card getStarterCard() {
+        return cards.get(cards.size() - 1);
     }
 }
