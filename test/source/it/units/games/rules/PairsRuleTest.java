@@ -17,31 +17,21 @@ class PairsRuleTest extends BaseTest {
 
     @Test
     public void testRunsPairs0() {
-        Hand hand = new Hand("4H9D3SACKC");
-        assertThat(hand.computeScore(), is(0));
+        checkHand("4H9D3SACKC", 0);
     }
 
     @Test
     public void testRunsPairs4() {
-        Hand hand = new Hand("4H4D3SACAC");
-        assertThat(hand.computeScore(), is(4));
+        checkHand("4H4D3SACAC", 4);
     }
 
     @Test
     public void testRunsPairs6() {
-        Hand hand = new Hand("4H4D4H2CAC");
-        assertThat(hand.computeScore(), is(6));
+        checkHand("4H4D4H2CAC", 6);
     }
 
     @Test
-    public void testRunsPairs3() {
-        Hand hand = new Hand("4H4D9S2CAC");
-        assertThat(hand.computeScore(), is(2));
-    }
-
-    @Test
-    public void testRunsPairs12() {
-        Hand hand = new Hand("4H4H4H4H9S");
-        assertThat(hand.computeScore(), is(12));
+    public void testRunsPairs8H7DQS2C7C() {
+        checkHand("8H7DQS2C7C", 2);
     }
 }

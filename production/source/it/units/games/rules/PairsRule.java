@@ -22,7 +22,8 @@ public class PairsRule implements Rule {
                 .filter(l -> l.size() >= 2)
                 .mapToInt(List::size)
                 .map(x -> (x == 2) ? 2 : (x == 3) ? 6 : 12).sum();
-        System.out.println(this.getClass().getSimpleName()+ " generates "+result);
+
+        System.out.println(this.getClass().getSimpleName() + " calculate " + result+" points");
         return result;
     }
 }

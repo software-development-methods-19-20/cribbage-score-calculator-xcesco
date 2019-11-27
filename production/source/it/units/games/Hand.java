@@ -1,6 +1,6 @@
 package it.units.games;
 
-import it.units.games.rules.FifteenTwosRule;
+import it.units.games.rules.FifteenRule;
 import it.units.games.rules.PairsRule;
 import it.units.games.rules.RunsRule;
 
@@ -13,7 +13,12 @@ public class Hand {
 
     static {
         rules = new ArrayList<>();
-        rules.add(new FifteenTwosRule());
+        init();
+    }
+
+    static void init() {
+        rules.clear();
+        rules.add(new FifteenRule());
         rules.add(new RunsRule());
         rules.add(new PairsRule());
     }

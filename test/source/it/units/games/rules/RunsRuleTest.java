@@ -1,12 +1,8 @@
 package it.units.games.rules;
 
 import it.units.games.BaseTest;
-import it.units.games.Hand;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 class RunsRuleTest extends BaseTest {
 
@@ -16,27 +12,30 @@ class RunsRuleTest extends BaseTest {
     }
 
     @Test
-    public void testRunsRule3() {
-        Hand hand = new Hand("AH2D3SAC6C");
-        assertThat(hand.computeScore(), is(3));
+    public void testRunsRuleAH2D3SAC6C() {
+        checkHand("AH2D3SAC6C", 6);
     }
 
     @Test
-    public void testRunsRule4() {
-        Hand hand = new Hand("4H2D3SACAC");
-        assertThat(hand.computeScore(), is(4));
+    public void testRunsRule4H2D3SACAC() {
+        checkHand("4H2D3SACAC", 8);
     }
 
     @Test
     public void testRunsRule5() {
-        Hand hand = new Hand("4H2D3SAC5C");
-        assertThat(hand.computeScore(), is(5));
+        checkHand("4H2D3SAC5C", 5);
     }
 
     @Test
     public void testRunsRule0() {
-        Hand hand = new Hand("4H6D3SAC7C");
-        assertThat(hand.computeScore(), is(0));
+        checkHand("4H6D3SAC7C", 0);
     }
+
+    @Test
+    public void testRunsRuleWith0H9H8D7S9S() {
+        checkHand("0H9H8D7S9S", 8);
+    }
+
+
 
 }

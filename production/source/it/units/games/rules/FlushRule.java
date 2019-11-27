@@ -9,7 +9,7 @@ public class FlushRule implements Rule {
 
     @Override
     public int apply(Hand hand) {
-        return Arrays.stream(Suite.values()).map(suite -> {
+        int result = Arrays.stream(Suite.values()).map(suite -> {
             int score = (int) hand
                     .getCards()
                     .stream()
@@ -22,5 +22,8 @@ public class FlushRule implements Rule {
             if (score == 5 && starterCard.getRank() == Rank.JACK) return 6;
             return 0;
         }).filter(score -> score >= 4).mapToInt(i -> i).sum();
+
+        System.out.println(this.getClass().getSimpleName() + " calculate " + result+" points");
+        return result;
     }
 }

@@ -15,7 +15,7 @@ public class Combination<T> {
 
     private List<T> dataSet;
 
-    public Stream<Stream<T>> calculate(int subItems) {
+    public Stream<Stream<T>> perform(int subItems) {
         List<int[]> result = generate(dataSet.size(), subItems);
 
         return result.stream().map(this::transform);

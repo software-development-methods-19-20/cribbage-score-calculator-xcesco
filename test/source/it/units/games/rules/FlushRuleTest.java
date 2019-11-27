@@ -17,32 +17,27 @@ class FlushRuleTest extends BaseTest {
 
     @Test
     public void testRunsFlush0() {
-        Hand hand = new Hand("AH2D3SAC6C");
-        assertThat(hand.computeScore(), is(0));
+        checkHand("AH2H3HAC6H", 0);
     }
 
     @Test
-    public void testRunsFlush0_2() {
-        Hand hand = new Hand("AH2H3HAC6H");
-        assertThat(hand.computeScore(), is(0));
+    public void testRunsFlush8H7DQS2C7C() {
+        checkHand("8H7DQS2C7C", 0);
     }
 
     @Test
     public void testRunsFlush4() {
-        Hand hand = new Hand("AH2H3HAH6D");
-        assertThat(hand.computeScore(), is(4));
+        checkHand("AH2H3HAH6D", 4);
     }
 
     @Test
     public void testRunsFlush5() {
-        Hand hand = new Hand("AH2H3HAH6H");
-        assertThat(hand.computeScore(), is(5));
+        checkHand("AH2H3HAH6H", 5);
     }
 
     @Test
     public void testRunsFlush6() {
-        Hand hand = new Hand("AH2H3HAHJH");
-        assertThat(hand.computeScore(), is(6));
+        checkHand("AH2H3HAHJH", 6);
     }
 
 }

@@ -5,11 +5,13 @@ import it.units.games.Combination;
 import it.units.games.Hand;
 import it.units.games.Rule;
 
+import java.util.stream.Collectors;
+
 /**
  * Two points for each separate combination of two or more cards totalling exactly fifteen
  * (Jack, Queen and King count as 10, Ace count as 1)
  */
-public class FifteenTwosRule implements Rule {
+public class FifteenRule implements Rule {
     @Override
     public int apply(Hand hand) {
         Combination<Card> combination = new Combination<>(hand.getCards());
@@ -20,16 +22,13 @@ public class FifteenTwosRule implements Rule {
         result += getScoreCombinationOf(4, combination);
         result += getScoreCombinationOf(5, combination);
 
-        System.out.println(this.getClass().getSimpleName() + " generates " + result);
+        System.out.println(this.getClass().getSimpleName() + " calculate " + result + " points");
         return result;
     }
 
     private int getScoreCombinationOf(int combinationSize, Combination<Card> combination) {
-        int score;
-        score = (int) combination.calculate(combinationSize)
-                .map(item -> item
-                        .mapToInt(card -> card.getRank().getIntValue())
-                        .sum())
+        int score = (int) combination.perform(combinationSize)
+                .map(item -> item.mapToInt(card -> card.getRank().getIntValue()).sum())
                 .filter(value -> value == 15)
                 .count() * 2;
 
