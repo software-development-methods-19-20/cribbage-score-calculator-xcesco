@@ -16,23 +16,17 @@ public class Hand {
         init();
     }
 
+    private final List<Card> cards;
+
+    public Hand(List<Card> cards) {
+        this.cards = cards;
+    }
+
     static void init() {
         rules.clear();
         rules.add(new FifteenRule());
         rules.add(new RunsRule());
         rules.add(new PairsRule());
-    }
-
-    private final List<Card> cards;
-
-    public Hand(String value) {
-        if (value.length() != 10) {
-            throw new IllegalArgumentException("Invalid hand size");
-        }
-        cards = new ArrayList<>();
-        for (int i = 0; i < value.length(); i += 2) {
-            cards.add(new Card(value.substring(i, i + 2)));
-        }
     }
 
     public int computeScore() {

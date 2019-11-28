@@ -10,7 +10,7 @@ public class CardTest {
     public void testConversion() {
         String[] input = {"AC", "QD", "5H"};
 
-        IntStream.range(0, input.length).forEach(index -> new Card(input[index]));
+        IntStream.range(0, input.length).forEach(index -> CardParser.parse(input[index]));
     }
 
     @Test
@@ -18,6 +18,6 @@ public class CardTest {
         String[] input = {"CZ", "ZQ"};
 
         IntStream.range(0, input.length).forEach(index ->
-                Assertions.assertThrows(IllegalArgumentException.class, () -> new Card(input[index])));
+                Assertions.assertThrows(IllegalArgumentException.class, () ->  CardParser.parse(input[index])));
     }
 }

@@ -10,7 +10,7 @@ public abstract class BaseTest {
     }
 
     protected void checkHand(String s, int i) {
-        Hand hand = new Hand(s);
+        Hand hand = HandParser.parse(s);
         assertThat(hand.computeScore(), is(i));
     }
 
