@@ -1,18 +1,20 @@
 package it.units.games.rules;
 
-import it.units.games.BaseTest;
-import it.units.games.Hand;
-import org.junit.jupiter.api.BeforeAll;
+import it.units.games.Rule;
+import it.units.games.RulesTest;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-class PairsRuleTest extends BaseTest {
+class PairsRuleTest extends RulesTest {
 
-    @BeforeAll
-    static void prepareRule() {
-        useOnlyThisRule(new PairsRule());
+    @Override
+    protected List<Rule> defineUsedRules() {
+        return Arrays.asList(new PairsRule());
     }
 
     @Test

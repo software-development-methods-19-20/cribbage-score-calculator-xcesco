@@ -1,14 +1,17 @@
 package it.units.games.rules;
 
-import it.units.games.BaseTest;
-import org.junit.jupiter.api.BeforeAll;
+import it.units.games.Rule;
+import it.units.games.RulesTest;
 import org.junit.jupiter.api.Test;
 
-class RunsRuleTest extends BaseTest {
+import java.util.Arrays;
+import java.util.List;
 
-    @BeforeAll
-    static void prepareRule() {
-        useOnlyThisRule(new RunsRule());
+class RunsRuleTest extends RulesTest {
+
+    @Override
+    protected List<Rule> defineUsedRules() {
+        return Arrays.asList(new RunsRule());
     }
 
     @Test
@@ -22,20 +25,19 @@ class RunsRuleTest extends BaseTest {
     }
 
     @Test
-    public void testRunsRule5() {
+    public void testRunsRule4H2D3SAC5C() {
         checkHand("4H2D3SAC5C", 5);
     }
 
     @Test
-    public void testRunsRule0() {
+    public void testRunsRule4H6D3SAC7C() {
         checkHand("4H6D3SAC7C", 0);
     }
 
     @Test
-    public void testRunsRuleWith0H9H8D7S9S() {
+    public void testRunsRule0H9H8D7S9S() {
         checkHand("0H9H8D7S9S", 8);
     }
-
 
 
 }
